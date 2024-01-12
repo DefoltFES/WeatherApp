@@ -4,15 +4,16 @@ using System.Text.Json.Serialization;
 
 namespace WeatherApp.Models
 {
-    public class Weather:INotifyPropertyChanged
+    /// <summary>
+    /// Класс который используется при десериализации JSON. 
+    /// Хранит информацию о температуре на улице.
+    /// </summary>
+    public class Main : INotifyPropertyChanged
     {
-        
+        private float temp;
 
-        [JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [JsonPropertyName("icon")]
-        public string WeatherIcon { get; set; }
+        [JsonPropertyName("temp")]
+        public float Temp { get => temp; set { temp = value; OnPropertyChanged(); } }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

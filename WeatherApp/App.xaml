@@ -4,6 +4,30 @@
              xmlns:local="clr-namespace:WeatherApp"
              StartupUri="./View/MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="MainColor" Color="#2fc22f"></SolidColorBrush>
+        <SolidColorBrush x:Key="ContentText" Color="#505472"></SolidColorBrush>
+        <Style x:Key="SimpleButton" TargetType="Button">
+            <Setter Property="Foreground" Value="{StaticResource MainColor}"></Setter>
+            <Setter Property="Background" Value="{StaticResource ContentText}"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontFamily" Value="Cambria"></Setter>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="SimpleTextBox" TargetType="TextBox">
+            <Setter Property="Foreground" Value="{StaticResource ContentText}"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontFamily" Value="Cambria"></Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource MainColor}"></Setter>
+        </Style>
+        <Style x:Key="BigTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontFamily" Value="Cambria"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource ContentText}"></Setter>
+        </Style>
+        <Style x:Key="SmallTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontFamily" Value="Cambria"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource ContentText}"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
