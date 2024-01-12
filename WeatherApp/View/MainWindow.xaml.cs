@@ -20,7 +20,13 @@ namespace WeatherApp.View
         public MainWindow()
         {
             InitializeComponent();
-            
+
+        }
+
+        private void FindButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext != null)
+                (DataContext as WeatherReportVM).GetWeatherForecast(TitleCityTextBox.Text.ToLower());
         }
     }
 }

@@ -10,7 +10,7 @@ namespace WeatherApp
     
     public partial class App : Application
     {
-        public const string apiKey = "aa396e6682620b63516a6182599db66d";
+        public const string apiKey = "API_KEY_PLACE HERE";
     }
 
 }

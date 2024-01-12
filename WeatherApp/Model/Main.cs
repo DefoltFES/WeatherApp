@@ -8,19 +8,10 @@ namespace WeatherApp.Models
     /// Класс который используется при десериализации JSON. 
     /// Хранит информацию о температуре на улице.
     /// </summary>
-    public class Main : INotifyPropertyChanged
+    public class Main
     {
-        private float temp;
-
         [JsonPropertyName("temp")]
-        public float Temp { get => temp; set { temp = value; OnPropertyChanged(); } }
+        public float Temp { get; set; }
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

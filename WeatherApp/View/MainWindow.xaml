@@ -10,10 +10,10 @@
         <vm:WeatherReportVM></vm:WeatherReportVM>
     </Window.DataContext>
     <StackPanel Margin="10" >
-        <TextBlock Style="{StaticResource BigTextBlock}" x:Name="TitleCity" FontSize="20" Text="Введите нужный вам город"></TextBlock>
+        <TextBlock Style="{StaticResource BigTextBlock}" x:Name="TitleCity" FontSize="20" Text="{Binding NameCity,StringFormat=Погода в городе {0}, TargetNullValue='Введите нужный вам город'}"></TextBlock>
         <StackPanel    Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
             <TextBox VerticalContentAlignment="Center" Style="{StaticResource SimpleTextBox}" x:Name="TitleCityTextBox" HorizontalAlignment="Stretch" MinWidth="150"></TextBox>
-            <Button Style="{StaticResource ResourceKey=SimpleButton}" x:Name="FindButton" Margin="5,0,0,0" Content="Поиск"></Button>
+            <Button x:Name="FindButton" Click="FindButton_Click" Style="{StaticResource ResourceKey=SimpleButton}" Margin="5,0,0,0" Content="Поиск"></Button>
         </StackPanel>
         <Grid x:Name="InfoWeatherGrid" Margin="0,20,0,20" >
             <Grid.RowDefinitions>
@@ -22,17 +22,17 @@
             <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="190"></ColumnDefinition>
                 <ColumnDefinition Width="150"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="0" Grid.Row="0" Text="Температура:"></TextBlock>
+            <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="0" Grid.Row="0" Text="Температура (C):"></TextBlock>
             <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="1" Grid.Row="0" Text="{Binding Temperature, TargetNullValue=0}"></TextBlock>
             <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="0" Grid.Row="1" Text="Описание:"></TextBlock>
             <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="1" Grid.Row="1" Text="{Binding Description,TargetNullValue='Нет'}"></TextBlock>
-            <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="0" Grid.Row="2" Text="Скорость ветра:"></TextBlock>
-            <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="1" Grid.Row="2" Text="{Binding WindSpeed,TargetNullValue=0}"></TextBlock>
+            <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="0" Grid.Row="2" Text="Скорость ветра (м/c):"></TextBlock>
+            <TextBlock Style="{StaticResource SmallTextBlock}" Grid.Column="1" Grid.Row="2" Text="{Binding WindSpeed, TargetNullValue=0}"></TextBlock>
         </Grid>
-        <Image x:Name="WeatherIcon" HorizontalAlignment="Left"  Width="150" Height="150"/>
+        
 
     </StackPanel>
 </Window>
